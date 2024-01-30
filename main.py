@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response, redirect
+from flask import Flask, request, make_response, redirect, escape
 
 app = Flask(__name__)
 
@@ -14,6 +14,7 @@ def index():
 @app.route('/hello')
 def hello():
     user_ip = request.cookies.get('user_ip')
+    user_ip = escape(user_ip)
     return f'Hello World Flask, your IP is {user_ip}'
 
 if __name__ == '__main__':
