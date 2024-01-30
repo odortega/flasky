@@ -7,7 +7,7 @@
 
 {% block content %}
     {% if user_ip %}
-        <h1>Hello Flaskym this is you IP {{user_ip}}</h1>
+        <h1>Hello Flasky this is you IP {{user_ip}}</h1>
     {% else %}
         <a href="{{url_for('index')}}">Go to home 🏡</a>
     {% endif %}
@@ -18,3 +18,4 @@
         {% endfor%}
     </ul>
 {% endblock %}
+
