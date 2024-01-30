@@ -1,1 +1,5 @@
-<h1>Hello Flaskym this is you IP {{user_ip}}</h1>
+{% if user_ip %}
+    <h1>Hello Flaskym this is you IP {{user_ip}}</h1>
+{% else %}
+    <a href="{{url_for('index')}}">Go to home 🏡</a>
+{% endif %}
