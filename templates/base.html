@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%} Flasky | {% endblock %}</title>
 </head>
-{% block content %}
-{% endblock %}
 <body>
-</body>
+    <header>
+        {% include 'navbar.html'%}
+    </header>
+    {% block content %}
+    {% endblock %}
+    </body>
 </html>
