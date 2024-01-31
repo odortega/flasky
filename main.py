@@ -1,5 +1,8 @@
 from flask import Flask, request, make_response, redirect,  render_template, session
 from flask_bootstrap import Bootstrap
+from flask_wtf import FlaskForm
+from wtforms.fields import StringField, PasswordField
+from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -15,6 +18,12 @@ app.config.update(
 # next line sets app config secret key
 app.config['SECRET_KEY'] = 'SUPER SECRET'
 
+
+
+# class LoginForm
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
 
 
 # error handler function for 404 error
